@@ -1,0 +1,18 @@
+procedure solve(N, M, U[], V[]);
+
+function length();
+function get_node(i);
+
+main {
+    read N, M;
+    for i to M {
+        read U[i], V[i];
+    }
+    call solve(N, M, U, V);
+    call l = length();
+    write l;
+    for i to l {
+        call x = get_node(i);
+        write x;
+    }
+}
