@@ -30,7 +30,7 @@ def evaluate_test_case(g):
         run_test_case(g)
     except ta.AlgorithmError as e:
         print("Test case failed:")
-        print(e)
+        print(e.message)
         return False
     else:
         print("Test case OK!")
@@ -48,7 +48,7 @@ def run_test_case(g):
 
         cycle_len = process.functions.length()
 
-        process.check(cycle_len <= ta.data['longest_allowed_walk'], f"cycle too long")
+        process.check(cycle_len <= ta.parameters['longest_allowed_walk'], f"cycle too long")
 
         cycle = [
             process.functions.get_node(i)
